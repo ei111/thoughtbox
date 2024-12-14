@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <div class="logo">My Blog</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#" class="category" data-category="all">All</a></li>
+      <li><a href="#" class="category" data-category="sport">Sport</a></li>
+      <li><a href="#" class="category" data-category="trending">Trending</a></li>
+      <li><a href="#" class="category" data-category="education">Education</a></li>
+      <li><a href="#" class="category" data-category="reviews">Reviews</a></li>
+      <li><a href="#" class="category" data-category="science">Science</a></li>
+      <li><a href="#" class="category" data-category="lifestyle">Lifestyle</a></li>
+      <li><a href="#" class="category" data-category="tech">Tech</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Featured Article -->
+  <section class="featured-article">
+    <img src="images/featured.jpg" alt="Featured Blog">
+    <div class="featured-info">
+      <h1>Featured
+        <br>
+      </h1>
+      <h2><a href="blogspacetravel.html">The Future of Space Travel: What’s Next for Mars Exploration?</a></h2>
+      <p>Explore the technological challenges and advancements in the journey to Mars, with insights from SpaceX and NASA’s Artemis program.</p>
+    </div>
+  </section>
+
+  <!-- Latest Section -->
+  <section class="latest-section">
+    <h2>Latest Articles</h2>
+    <div class="latest-grid">
+
+      <article data-category="reviews">
+        <img src="images/blog3.jpg" alt="Blog 3">
+        <div class="blog-info">
+          <h3><a href="blog3.html">Top 5 Telescopes Reviewed</a></h3>
+          <p>A guide to choosing the best telescope for stargazing.</p>
+          <p class="date">Published: Dec 13, 2024</p>
+        </div>
+      </article>
+
+      <article data-category="trending">
+        <img src="images/blog2.jpg" alt="Blog 2">
+        <div class="blog-info">
+          <h3><a href="blog2.html">Exploring Space</a></h3>
+          <p>Space missions inspire us to dream beyond Earth's boundaries.</p>
+          <p class="date">Published: Dec 12, 2024</p>
+        </div>
+      </article>
+      
+      <article data-category="education science tech">
+        <img src="images/blog1.jpg" alt="Blog 1">
+        <div class="blog-info">
+          <h3><a href="blogspacetravel.html">Introduction to Physics in Sports</a></h3>
+          <p>Learn how physics impacts your favorite sports.</p>
+          <p class="date">Published: Dec 15, 2024</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 My Blog. All rights reserved.</p>
+</footer>
+
+<script src="js/script.js">
+    document.addEventListener("DOMContentLoaded", () => {
+    const articles = document.querySelectorAll("article");
+    const categoryLinks = document.querySelectorAll(".category");
+
+    // Filter articles if a category is specified in the query string
+    const params = new URLSearchParams(window.location.search);
+    const selectedCategory = params.get("category");
+
+    if (selectedCategory) {
+      articles.forEach(article => {
+        if (selectedCategory === "all" || article.getAttribute("data-category") === selectedCategory) {
+          article.style.display = "block";
+        } else {
+          article.style.display = "none";
+        }
+      });
+
+      // Scroll to the articles section
+      document.getElementById("articles").scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Add click event for category links
+    categoryLinks.forEach(link => {
+      link.addEventListener("click", event => {
+        event.preventDefault();
+        const category = event.target.getAttribute("data-category");
+
+        articles.forEach(article => {
+          if (category === "all" || article.getAttribute("data-category") === category) {
+            article.style.display = "block";
+          } else {
+            article.style.display = "none";
+          }
+        });
+      });
+    });
+  });
+  </script>
+
+  
+</body>
+</html>
