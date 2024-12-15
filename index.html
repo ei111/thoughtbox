@@ -11,14 +11,14 @@
   <div class="logo">Thought Box</div>
   <nav>
     <ul class="nav-links">
-      <li><a href="index.html?category=all" class="category" data-category="all">All</a></li>
-      <li><a href="index.html?category=sport" class="category" data-category="sport">Sport</a></li>
-      <li><a href="index.html?category=trending" class="category" data-category="trending">Trending</a></li>
-      <li><a href="index.html?category=education" class="category" data-category="education">Education</a></li>
-      <li><a href="index.html?category=reviews" class="category" data-category="reviews">Reviews</a></li>
-      <li><a href="index.html?category=science" class="category" data-category="science">Science</a></li>
-      <li><a href="index.html?category=lifestyle" class="category" data-category="lifestyle">Lifestyle</a></li>
-      <li><a href="index.html?category=tech" class="category" data-category="tech">Tech</a></li>
+      <li><a href="#" class="category" data-category="all">All</a></li>
+      <li><a href="#" class="category" data-category="sport">Sport</a></li>
+      <li><a href="#" class="category" data-category="trending">Trending</a></li>
+      <li><a href="#" class="category" data-category="education">Education</a></li>
+      <li><a href="#" class="category" data-category="reviews">Reviews</a></li>
+      <li><a href="#" class="category" data-category="science">Science</a></li>
+      <li><a href="#" class="category" data-category="lifestyle">Lifestyle</a></li>
+      <li><a href="#" class="category" data-category="Tech">Tech</a></li>
     </ul>
   </nav>
 </header>
@@ -26,7 +26,7 @@
 <main>
   <!-- Featured Article -->
   <section class="featured-article">
-    <img src="images/featured.jpg" alt="Featured Blog">
+    <img src="images/spacetravel.jpg" alt="Featured Blog">
     <div class="featured-info">
       <h1>Featured
         <br>
@@ -42,28 +42,28 @@
     <div class="latest-grid" id="articles">
 
       <article data-category="lifestyle science education">
-        <img src="images/blog3.jpg" alt="Blog 6">
+        <img src="images/happy.jpg" alt="Blog 6">
         <div class="blog-info">
-          <h3><a href="blog3.html">The Science of Happiness</a></h3>
-          <p>A guide to choosing the best telescope for stargazing.</p>
+          <h3><a href="bloghappy.html">The Science of Happiness</a></h3>
+          <p>Research shows that gratitude, purpose, and strong social connections are key to lasting happiness.</p>
           <p class="date">Published: Dec 15, 2024</p>
         </div>
       </article>
 
       <article data-category="sport lifestyle education">
-        <img src="images/.jpg" alt="Blog 5">
+        <img src="images/winning.jpg" alt="Blog 5">
         <div class="blog-info">
-          <h3><a href="blogAIart.html">The Psychology of Winning</a></h3>
-          <p>AI is revolutionizing art, sparking debates about creativity, ethics, and the future of artistic expression.</p>
+          <h3><a href="blogwin.html">The Psychology of Winning</a></h3>
+          <p>Mental strategies like visualization, focus, and resilience are key to achieving success in competitive sports.</p>
           <p class="date">Published: Dec 15, 2024</p>
         </div>
       </article>
       
       <article data-category="lifestyle trending tech">
-        <img src="images/.jpg" alt="Blog 4">
+        <img src="images/e-sports.jpg" alt="Blog 4">
         <div class="blog-info">
-          <h3><a href="blogspacetravel.html">The Evolution of Esports</a></h3>
-          <p>Explore the technological challenges and advancements in the journey to Mars. </p>
+          <h3><a href="blogE-Sports.html">The Evolution of Esports</a></h3>
+          <p>Esports has evolved into a global industry, blending competitive gaming with cultural influence and massive fan engagement.</p>
           <p class="date">Published: Dec 15, 2024</p>
         </div>
       </article>
@@ -71,13 +71,13 @@
       <article data-category="tech science education">
         <img src="images/quantam.jpg" alt="Blog 3">
         <div class="blog-info">
-          <h3><a href="blogQuantam">Quantam Computers Explained</a></h3>
+          <h3><a href="blogQuantam.html">Quantam Computers Explained</a></h3>
           <p>Quantum computers use advanced principles to solve previously impossible problems, promising groundbreaking advancements in technology.</p>
           <p class="date">Published: Dec 15, 2024</p>
         </div>
       </article>
 
-      <article data-category="trending tech">
+      <article data-category="trending tech science">
         <img src="images/AIart.jpg" alt="Blog 2">
         <div class="blog-info">
           <h3><a href="blogAIart.html">The Rise of AI Art</a></h3>
@@ -103,39 +103,7 @@
   <p>&copy; 2024 Thought Box. All rights reserved.</p>
 </footer>
 
-<script src="js/script.js">
-  document.addEventListener("DOMContentLoaded", () => {
-    const articles = document.querySelectorAll("article");
-    const categoryLinks = document.querySelectorAll(".category");
-
-    // Check for the selected category from the URL
-    const params = new URLSearchParams(window.location.search);
-    const selectedCategory = params.get("category");
-
-    // If a category is selected, filter articles
-    if (selectedCategory) {
-      articles.forEach(article => {
-        const articleCategories = article.getAttribute("data-category").split(" ");
-        if (selectedCategory === "all" || articleCategories.includes(selectedCategory)) {
-          article.style.display = "block"; // Show the article
-        } else {
-          article.style.display = "none"; // Hide the article
-        }
-      });
-    }
-
-    // Add click event listener to category links to filter articles
-    categoryLinks.forEach(link => {
-      link.addEventListener("click", event => {
-        event.preventDefault();
-        const category = event.target.getAttribute("data-category");
-
-        // Update URL with the selected category
-        window.location.href = `index.html?category=${category}`;
-      });
-    });
-  });
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
