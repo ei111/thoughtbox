@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Post - The Future of Space Travel: What’s Next for Mars Exploration?</title>
+    <title>Blog Post - My Blog</title>
     <style>
       /* General Styling */
       * {
@@ -14,7 +14,7 @@
 
       body {
         font-family: 'Arial', sans-serif;
-        background: #000000;
+        background: #111;
         color: #333;
         display: flex;
         flex-direction: column;
@@ -32,7 +32,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: #000000;
+        background: #111;
         color: white;
         padding: 15px 20px;
         position: sticky;
@@ -45,10 +45,6 @@
         color: white;
         font-size: 1.5rem;
         font-weight: bold;
-      }
-
-      header .logo a:hover {
-        color: #ff4500;
       }
 
       header .nav-links {
@@ -113,7 +109,7 @@
       /* Footer */
       footer {
         text-align: center;
-        background: #000000;
+        background: #111;
         color: white;
         padding: 15px 20px;
         margin-top: auto;
@@ -126,6 +122,9 @@
       <div class="logo">
         <a href="index.html">Thought Box</a>
       </div>
+      <nav>
+        
+      </nav>
     </header>
 
     <!-- Main Blog Content -->
@@ -172,45 +171,12 @@
             </article>
     </main>
 
-    <script src="https://giscus.app/client.js"
-        data-repo="ei111/thoughtbox"
-        data-repo-id="R_kgDONdsLIg"
-        data-category="Ideas"
-        data-category-id="DIC_kwDONdsLIs4ClO47"
-        data-mapping="title"
-        data-strict="0"
-        data-reactions-enabled="0"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="dark"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-    </script>
-
     <!-- Footer -->
     <footer>
       <p>&copy; 2024 Thought Box. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const categoryLinks = document.querySelectorAll(".category");
-
-        categoryLinks.forEach(link => {
-          link.addEventListener("click", event => {
-            event.preventDefault();
-            const selectedCategory = event.target.getAttribute("data-category");
-
-            // Navigate to index.html with category query string
-            window.location.href = `index.html?category=${selectedCategory}`;
-          });
-        });
-      });
-    </script>
-
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHW0CS2693"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHW0CS2693"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -219,5 +185,6 @@
   gtag('config', 'G-BHW0CS2693');
 </script>
             
+  
   </body>
 </html>
