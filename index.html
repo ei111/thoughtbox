@@ -3,15 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thought Box</title>
+  <title>My Blog</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    
-  </style>
 </head>
 <body>
 <header>
-  <div class="logo">Thought Box</div>
+  <div class="logo">My Blog</div>
   <nav>
     <ul class="nav-links">
       <li><a href="index.html?category=all" class="category" data-category="all">All</a></li>
@@ -42,31 +39,58 @@
   <!-- Latest Section -->
   <section class="latest-section">
     <h2 class="latest">Latest Articles</h2>
-    <div class="latest-grid">
+    <div class="latest-grid" id="articles">
 
-      <article data-category="reviews">
-        <img src="images/blog3.jpg" alt="Blog 3">
+      <article data-category="lifestyle science education">
+        <img src="images/blog3.jpg" alt="Blog 6">
         <div class="blog-info">
-          <h3><a href="blog3.html">Top 5 Telescopes Reviewed</a></h3>
+          <h3><a href="blog3.html">The Science of Happiness</a></h3>
           <p>A guide to choosing the best telescope for stargazing.</p>
-          <p class="date">Published: Dec 13, 2024</p>
+          <p class="date">Published: Dec 15, 2024</p>
         </div>
       </article>
 
-      <article data-category="trending">
-        <img src="images/blog2.jpg" alt="Blog 2">
+      <article data-category="sport lifestyle education">
+        <img src="images/.jpg" alt="Blog 5">
         <div class="blog-info">
-          <h3><a href="blog2.html">Exploring Space</a></h3>
-          <p>Space missions inspire us to dream beyond Earth's boundaries.</p>
-          <p class="date">Published: Dec 12, 2024</p>
+          <h3><a href="blogAIart.html">The Psychology of Winning</a></h3>
+          <p>AI is revolutionizing art, sparking debates about creativity, ethics, and the future of artistic expression.</p>
+          <p class="date">Published: Dec 15, 2024</p>
+        </div>
+      </article>
+      
+      <article data-category="lifestyle trending tech">
+        <img src="images/.jpg" alt="Blog 4">
+        <div class="blog-info">
+          <h3><a href="blogspacetravel.html">The Evolution of Esports</a></h3>
+          <p>Explore the technological challenges and advancements in the journey to Mars. </p>
+          <p class="date">Published: Dec 15, 2024</p>
+        </div>
+      </article>
+
+      <article data-category="tech science education">
+        <img src="images/quantam.jpg" alt="Blog 3">
+        <div class="blog-info">
+          <h3><a href="blogQuantam">Quantam Computers Explained</a></h3>
+          <p>Quantum computers use advanced principles to solve previously impossible problems, promising groundbreaking advancements in technology.</p>
+          <p class="date">Published: Dec 15, 2024</p>
+        </div>
+      </article>
+
+      <article data-category="trending tech">
+        <img src="images/AIart.jpg" alt="Blog 2">
+        <div class="blog-info">
+          <h3><a href="blogAIart.html">The Rise of AI Art</a></h3>
+          <p>AI is revolutionizing art, sparking debates about creativity, ethics, and the future of artistic expression.</p>
+          <p class="date">Published: Dec 15, 2024</p>
         </div>
       </article>
       
       <article data-category="education science tech">
-        <img src="images/blog1.jpg" alt="Blog 1">
+        <img src="images/spacetravel.jpg" alt="Blog 1">
         <div class="blog-info">
-          <h3><a href="blogspacetravel.html">Introduction to Physics in Sports</a></h3>
-          <p>Learn how physics impacts your favorite sports.</p>
+          <h3><a href="blogspacetravel.html">The Future of Space Travel</a></h3>
+          <p>Explore the technological challenges and advancements in the journey to Mars. </p>
           <p class="date">Published: Dec 15, 2024</p>
         </div>
       </article>
@@ -76,58 +100,42 @@
 </main>
 
 <footer>
-  <p>&copy; 2024 Thought Box. All rights reserved.</p>
+  <p>&copy; 2024 My Blog. All rights reserved.</p>
 </footer>
 
 <script src="js/script.js">
-    document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const articles = document.querySelectorAll("article");
     const categoryLinks = document.querySelectorAll(".category");
 
-    // Filter articles if a category is specified in the query string
+    // Check for the selected category from the URL
     const params = new URLSearchParams(window.location.search);
     const selectedCategory = params.get("category");
 
+    // If a category is selected, filter articles
     if (selectedCategory) {
       articles.forEach(article => {
-        if (selectedCategory === "all" || article.getAttribute("data-category") === selectedCategory) {
-          article.style.display = "block";
+        const articleCategories = article.getAttribute("data-category").split(" ");
+        if (selectedCategory === "all" || articleCategories.includes(selectedCategory)) {
+          article.style.display = "block"; // Show the article
         } else {
-          article.style.display = "none";
+          article.style.display = "none"; // Hide the article
         }
       });
-
-      // Scroll to the articles section
-      document.getElementById("articles").scrollIntoView({ behavior: "smooth" });
     }
 
-    // Add click event for category links
+    // Add click event listener to category links to filter articles
     categoryLinks.forEach(link => {
       link.addEventListener("click", event => {
         event.preventDefault();
         const category = event.target.getAttribute("data-category");
 
-        articles.forEach(article => {
-          if (category === "all" || article.getAttribute("data-category") === category) {
-            article.style.display = "block";
-          } else {
-            article.style.display = "none";
-          }
-        });
+        // Update URL with the selected category
+        window.location.href = `index.html?category=${category}`;
       });
     });
   });
-  </script>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHW0CS2693"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-BHW0CS2693');
 </script>
 
-  
 </body>
 </html>
